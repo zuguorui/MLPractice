@@ -9,13 +9,13 @@ function p = predictOneVsAll(all_theta, X)
 %  for 4 examples) 
 
 m = size(X, 1);
-num_labels = size(all_theta, 1);
+num_labels = size(all_theta, 2);
 
 % You need to return the following variables correctly 
 p = zeros(size(X, 1), 1);
 
 % Add ones to the X data matrix
-X = [ones(m, 1) X];
+X_temp = [ones(m, 1) X];
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Complete the following code to make predictions using
@@ -29,6 +29,10 @@ X = [ones(m, 1) X];
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
 %       
+
+predict = X_temp * all_theta;
+
+[vol, p] = max(predict, [], 2);
 
 
 
