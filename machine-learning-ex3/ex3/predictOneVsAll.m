@@ -30,9 +30,9 @@ X_temp = [ones(m, 1) X];
 %       for each row.
 %       
 
-result = X_temp * all_theta;
+predict = X_temp * all_theta;
 
-p = max(result, [], 2);
+[vol, p] = max(predict, [], 2);
 
 
 
