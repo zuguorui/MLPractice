@@ -53,7 +53,7 @@ fprintf('\n==== Processed Email ====\n\n');
 
 % Process file
 l = 0;
-
+wordItr = 1;
 while ~isempty(email_contents)
 
     % Tokenize and also get rid of any punctuation
@@ -96,7 +96,14 @@ while ~isempty(email_contents)
     % Note: You can use strcmp(str1, str2) to compare two strings (str1 and
     %       str2). It will return 1 only if the two strings are equivalent.
     %
-
+    
+    for j = 1 : length(vocabList)
+        if strcmp(str, vocabList{j}) == 1
+            word_indices(wordItr) = j;
+            wordItr = wordItr + 1;
+            break;
+        end
+    end
 
 
 
