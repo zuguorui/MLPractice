@@ -27,7 +27,11 @@ centroids = zeros(K, n);
 %
 
 
-
+for i = 1 : K
+    [targetIndex, col] = find(idx == i);
+    elements = X(targetIndex,:);
+    centroids(i,:) = sum(elements, 1) / size(targetIndex, 1);
+end
 
 
 
